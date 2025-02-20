@@ -3,9 +3,11 @@ import { createBrowserRouter } from "react-router-dom";
 
 import ErrorPage from "../pages/ErrorPage";
 import MainLayout from "../Layout/MainLayout";
+import Login from "../pages/Login"
 import Home from "../pages/Home";
 import AddTask from "../pages/AddTask";
 import AllTasks from "../pages/AllTasks";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
     {
@@ -19,17 +21,17 @@ const router = createBrowserRouter([
         },
         {
             path: "/add-task",
-            element:<AddTask></AddTask>,   
+            element:<PrivateRoute><AddTask></AddTask> </PrivateRoute>,  
           },
           {
             path: "/all-tasks",
-            element:<AllTasks></AllTasks>,   
+             element:<PrivateRoute><AllTasks></AllTasks>  </PrivateRoute>,   
           },
 
-        // {
-        //   path: 'login',
-        //   element: <Login></Login>
-        // },
+        {
+          path: 'login',
+          element: <Login></Login>
+        },
         // {
         //   path: 'signup',
         //   element: <SignUp></SignUp>

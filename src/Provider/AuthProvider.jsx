@@ -30,7 +30,7 @@ const signOutUser = () => {
 //signIn with Google
 const signInWithGoogle = () => {
     setLoading(true)
-    return signInWithPopup(auth, provider);
+    return signInWithPopup(auth, provider).finally(() => setLoading(false));;
 }
 
 useEffect(() =>{
