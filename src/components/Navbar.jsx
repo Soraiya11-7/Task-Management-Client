@@ -23,7 +23,7 @@ export default function Navbar() {
     }
 
     return (
-        <nav className="bg-purple-800 p-4">
+        <nav className="bg-purple-800 p-4 sticky top-0 z-50">
             <div className="container mx-auto flex justify-between items-center w-[90%]">
                 <Link to="/" className="text-white text-xl font-bold">Task Manager</Link>
 
