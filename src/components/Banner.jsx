@@ -3,7 +3,7 @@ import img3 from '../assets/tasks_banner.jpg';
 const Banner = () => {
   return (
     <div className="w-full">
-      <div className="relative w-full h-[230px] sm:h-[320px] md:h-[420px] rounded-b-lg overflow-hidden">
+      <div className="relative w-full h-[230px] sm:h-[320px] md:h-[450px] rounded-b-lg overflow-hidden">
         {/* Background Image */}
         <img
           src={img3}

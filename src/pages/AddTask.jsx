@@ -2,11 +2,13 @@ import Swal from "sweetalert2";
 import useAxiosPublic from "../hooks/useAxiosPublic";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import useAuth from "../hooks/useAuth";
 
 const AddTask = () => {
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
     const axiosPublic = useAxiosPublic();
     const navigate = useNavigate()
+    const {user} = useAuth();
 
     const onSubmit = async (data) => {
         try {
@@ -15,6 +17,7 @@ const AddTask = () => {
                 category: data.category,
                 description: data.description,
                 timestamp: new Date().toISOString(),
+                userEmail:user?.email,
             };
 
             // Save camp details to the database
