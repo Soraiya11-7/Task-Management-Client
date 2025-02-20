@@ -23,19 +23,55 @@ const AllTasks = () => {
         }
     });
 
-    console.log(tasks);
-    console.log(user);
+    // console.log(tasks);
+    // console.log(user);
+
+      // Handle task deletion
+    const handleDelete = (task) => {
+        Swal.fire({
+          title: "Are you sure?",
+          text: "You won't be able to revert this!",
+          icon: "warning",
+          showCancelButton: true,
+          confirmButtonColor: "#3085d6",
+          cancelButtonColor: "#d33",
+          confirmButtonText: "Yes, delete it!",
+        }).then(async (result) => {
+          if (result.isConfirmed) {
+            // console.log(camp.CampName);
+            const res = await axiosPublic.delete(`/tasks/${task._id}`);
+            // console.log(res);
+            if (res.data.deletedCount > 0) {
+              refetch();
+              Swal.fire({
+                position: "top-end",
+                icon: "success",
+                title: `Task has been deleted`,
+                showConfirmButton: false,
+                timer: 1500,
+              });
+            }
+          }
+        }).catch((err) => {
+          // console.error("Error updating profile:", error);
+          const errorMessage = err.message;
+          toast.error(errorMessage || "An unexpected error occurred", {
+            position: "top-center",
+            autoClose: 2000,
+        });
+        })
+      };
 
     // Handle task deletion
-    const handleDelete = async (id) => {
-        try {
-            await axiosPublic.delete(`/tasks/${id}`);
-            alert("Task deleted successfully");
-        } catch (error) {
-            console.error("Error deleting task:", error);
-            alert("Error deleting task");
-        }
-    };
+    // const handleDelete = async (id) => {
+    //     try {
+    //         await axiosPublic.delete(`/tasks/${id}`);
+    //         alert("Task deleted successfully");
+    //     } catch (error) {
+    //         console.error("Error deleting task:", error);
+    //         alert("Error deleting task");
+    //     }
+    // };
 
     // Handle task edit
     const handleEdit = (task) => {
@@ -46,7 +82,7 @@ const AllTasks = () => {
 
     const handleUpdateTask = async (updatedTask) => {
         try {
-            const dbResponse = await axiosPublic.patch(`/tasks/${updatedTask._id}`, updatedTask);
+            const dbResponse = await axiosPublic.put(`/tasks/${updatedTask._id}`, updatedTask);
             if (dbResponse.data.modifiedCount > 0) {
                 refetch();
                 setShowModal(false);
@@ -73,7 +109,7 @@ const AllTasks = () => {
 
     return (
         <div className="container w-[80%] mx-auto">
-            All Tasks
+            <h2 className="text-2xl md:text-4xl font-bold mb-2 text-center my-8 dark:text-white">All Tasks</h2>
             {
                 loading ? (
                     <div className="flex items-center justify-center">
@@ -98,7 +134,7 @@ const AllTasks = () => {
                                                         Edit
                                                     </button>
                                                     <button
-                                                        onClick={() => handleDelete(task._id)}
+                                                        onClick={() => handleDelete(task)}
                                                         className="text-red-500 hover:underline"
                                                     >
                                                         Delete
