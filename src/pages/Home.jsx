@@ -1,8 +1,11 @@
+import Banner from "../components/Banner";
 
 
 const Home = () => {
     return (
-        <div className="text-yellow-500 font-bold text-5xl text-center container w-[80%] mx-auto">
+        <div className="text-yellow-500 font-bold text-5xl text-center container w-full mx-auto">
+            <Banner></Banner>
+
             This is home
         </div>
     );
