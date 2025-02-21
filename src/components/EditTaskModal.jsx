@@ -43,7 +43,7 @@ const EditTaskModal = ({ isOpen, task, onClose, refetch }) => {
       });
     }
   };
-  console.log("Refetch Type:", typeof refetch); 
+  // console.log("Refetch Type:", typeof refetch); 
 
   return (
     <div>
@@ -51,7 +51,7 @@ const EditTaskModal = ({ isOpen, task, onClose, refetch }) => {
         <div className="fixed inset-0 flex justify-center items-center bg-black/30">
           <div className="bg-white p-6 rounded-lg shadow-lg w-[400px] text-black">
             <form onSubmit={handleSubmit(onSubmit)}>
-              <h3 className="text-xl font-bold text-green-800 mb-4 text-center">Edit Task</h3>
+              <h3 className="text-xl font-bold text-purple-800-800 mb-4 text-center">Update Task</h3>
 
               {/* Hidden Input for Task ID */}
               <input type="hidden" {...register('_id')} />
@@ -77,7 +77,7 @@ const EditTaskModal = ({ isOpen, task, onClose, refetch }) => {
               </div>
 
               {/* Category Field */}
-              <div className="form-control mt-2 text-left">
+              <div className="form-control mt-1 text-left">
                 <label className="label">
                   <span className="label-text text-sm sm:text-base text-black">Category*</span>
                 </label>
@@ -96,7 +96,7 @@ const EditTaskModal = ({ isOpen, task, onClose, refetch }) => {
               </div>
 
               {/* Description Field */}
-              <div className="form-control mt-2 text-left">
+              <div className="form-control mt-1 text-left">
                 <label className="label">
                   <span className="label-text text-sm sm:text-base text-black">Description</span>
                 </label>

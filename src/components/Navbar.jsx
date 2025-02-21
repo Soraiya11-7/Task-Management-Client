@@ -15,9 +15,9 @@ export default function Navbar() {
             .then(() => {
                 navigate('/')
             })
-            .catch((err) => {
-                const error = err.message;
-                console.log(error);
+            .catch(() => {
+                // const error = err.message;
+                // console.log(error);
             })
 
     }

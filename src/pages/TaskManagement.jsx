@@ -1,19 +1,17 @@
 
-
 import { useEffect, useState } from "react";
-// import { useQuery } from "@tanstack/react-query";
 import { DragDropContext, Droppable, Draggable } from "@hello-pangea/dnd";
-import useAxiosPublic from "../hooks/useAxiosPublic";
-// import useAuth from "../hooks/useAuth";
-import EditTaskModal from "./EditTaskModal"; // Import your modal
 import Swal from "sweetalert2";
 import { toast } from "react-toastify";
 import { FaRegClock, FaEdit, FaTrash } from "react-icons/fa";
+import useAxiosPublic from "../hooks/useAxiosPublic";
 import useTask from "../hooks/useTask";
+import EditTaskModal from "../components/EditTaskModal";
+
 
 const categories = ["To-Do", "In Progress", "Done"];
 
-const Demo = () => {
+const TaskManagement = () => {
     const axiosPublic = useAxiosPublic();
     const [showModal, setShowModal] = useState(false);
     const [editTask, setEditTask] = useState(null);
@@ -244,4 +242,4 @@ const Demo = () => {
     );
 };
 
-export default Demo;
+export default TaskManagement;

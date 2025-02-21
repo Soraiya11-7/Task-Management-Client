@@ -6,8 +6,8 @@ import MainLayout from "../Layout/MainLayout";
 import Login from "../pages/Login"
 import Home from "../pages/Home";
 import AddTask from "../pages/AddTask";
-import AllTasks from "../pages/AllTasks";
 import PrivateRoute from "./PrivateRoute";
+import TaskManagement from "../pages/TaskManagement";
 
 const router = createBrowserRouter([
     {
@@ -25,7 +25,7 @@ const router = createBrowserRouter([
           },
           {
             path: "/all-tasks",
-             element:<PrivateRoute><AllTasks></AllTasks>  </PrivateRoute>,   
+             element:<PrivateRoute><TaskManagement></TaskManagement> </PrivateRoute>,   
           },
 
         {
