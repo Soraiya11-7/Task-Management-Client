@@ -1,0 +1,9 @@
+/* Add this to your global CSS file or a style block */
+.draggable-container {
+    overflow: hidden; /* Prevent cards from overflowing */
+    position: relative;
+  }
+  
+  .draggable-card {
+    touch-action: none; /* Disable browser touch actions */
+  }

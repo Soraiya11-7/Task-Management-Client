@@ -45,7 +45,7 @@ const AllTasks = () => {
     }, [tasksData]);
 
     // Sync tasks with WebSocket on update
-  
+
 
     // Handle task deletion
     const handleDelete = (task) => {
@@ -109,37 +109,37 @@ const AllTasks = () => {
     };
 
     // Handle Drag-and-Drop
-   
+
     // const onDragEnd = async (result) => {
     //     const { source, destination } = result;
-    
+
     //     // If dropped outside of a valid droppable area
     //     if (!destination) return;
-    
+
     //     // If dropped in the same position (no actual change)
     //     if (source.droppableId === destination.droppableId && source.index === destination.index) {
     //         return;
     //     }
-    
+
     //     // Find the dragged task
     //     const updatedTasks = [...tasksData];
     //     const draggedTaskIndex = updatedTasks.findIndex(task => task._id === result.draggableId);
     //     const draggedTask = updatedTasks[draggedTaskIndex];
-    
+
     //     if (!draggedTask) return;
-    
+
     //     // Update category if moved to a different column
     //     if (source.droppableId !== destination.droppableId) {
     //         draggedTask.category = destination.droppableId; // Update task category
     //     }
-    
+
     //     // Remove from old position and insert into new position
     //     updatedTasks.splice(source.index, 1); // Remove from original position
     //     updatedTasks.splice(destination.index, 0, draggedTask); // Insert into new position
-    
+
     //     // Update state optimistically
     //     setTasksData(updatedTasks);
-    
+
     //     // Send the updated task to the backend
     //     try {
     //         const dbResponse = await axiosPublic.put(`/tasks/${draggedTask._id}`, draggedTask);
@@ -155,52 +155,52 @@ const AllTasks = () => {
     // };
     const onDragEnd = async (result) => {
         const { source, destination } = result;
-    
+
         // If dropped outside of a valid droppable area
         if (!destination) return;
-    
+
         // If dropped in the same position (no actual change)
         if (source.droppableId === destination.droppableId && source.index === destination.index) {
             return;
         }
-    
+
         // Find the dragged task
         const updatedTasks = [...tasksData];
         const draggedTaskIndex = updatedTasks.findIndex((task) => task._id === result.draggableId);
         const draggedTask = updatedTasks[draggedTaskIndex];
-    
+
         if (!draggedTask) return;
-    
+
         // Update category if moved to a different column
         if (source.droppableId !== destination.droppableId) {
             draggedTask.category = destination.droppableId; // Update task category
         }
-    
+
         // Remove from old position and insert into new position
         updatedTasks.splice(source.index, 1); // Remove from original position
         updatedTasks.splice(destination.index, 0, draggedTask); // Insert into new position
-    
+
 
         // Update state optimistically
         setTasksData(updatedTasks);
-    
+
         // Send the updated task to the backend immediately
         try {
             const dbResponse = await axiosPublic.put(`/tasks/${draggedTask._id}`, draggedTask);
             if (dbResponse.data.modifiedCount > 0) {
                 // Emit the update to the WebSocket
                 socket.emit("taskUpdated", draggedTask);
-    
+
                 // Refresh data after the update is successful (no need for page refresh)
-                refetch(); 
+                refetch();
             }
         } catch (err) {
             toast.error(err.message || "Error updating task", { position: "top-center", autoClose: 2000 });
         }
     };
-    
-    
-    
+
+
+
 
     // Format timestamp
     const formatTimestamp = (timestamp) => {
@@ -236,30 +236,30 @@ const AllTasks = () => {
                                                 .filter((task) => task.category === category)
                                                 .map((task, index) => (
                                                     <Draggable key={task._id + "-" + index} draggableId={task._id.toString()} index={index}>
-  {(provided) => (
-    <div
-      ref={provided.innerRef}
-      {...provided.draggableProps}
-      {...provided.dragHandleProps}
-      className="p-4 border rounded-md shadow-sm bg-gray-100"
-    >
-      <h3 className="text-lg font-semibold">{task.title}</h3>
-      <p className="text-gray-600">{task.description}</p>
-      <div className="flex items-center text-sm text-gray-500 mt-2">
-        <FaRegClock className="mr-2" />
-        <span>{formatTimestamp(task.timestamp)}</span>
-      </div>
-      <div className="flex justify-between mt-3">
-        <button onClick={() => handleEdit(task)} className="text-blue-500 hover:underline">
-          Edit
-        </button>
-        <button onClick={() => handleDelete(task)} className="text-red-500 hover:underline">
-          Delete
-        </button>
-      </div>
-    </div>
-  )}
-</Draggable>
+                                                        {(provided) => (
+                                                            <div
+                                                                ref={provided.innerRef}
+                                                                {...provided.draggableProps}
+                                                                {...provided.dragHandleProps}
+                                                                className="p-4 border rounded-md shadow-sm bg-gray-100"
+                                                            >
+                                                                <h3 className="text-lg font-semibold">{task.title}</h3>
+                                                                <p className="text-gray-600">{task.description}</p>
+                                                                <div className="flex items-center text-sm text-gray-500 mt-2">
+                                                                    <FaRegClock className="mr-2" />
+                                                                    <span>{formatTimestamp(task.timestamp)}</span>
+                                                                </div>
+                                                                <div className="flex justify-between mt-3">
+                                                                    <button onClick={() => handleEdit(task)} className="text-blue-500 hover:underline">
+                                                                        Edit
+                                                                    </button>
+                                                                    <button onClick={() => handleDelete(task)} className="text-red-500 hover:underline">
+                                                                        Delete
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                        )}
+                                                    </Draggable>
 
                                                 ))}
                                             {provided.placeholder}
