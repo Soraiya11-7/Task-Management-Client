@@ -8,6 +8,8 @@ import Home from "../pages/Home";
 import AddTask from "../pages/AddTask";
 import PrivateRoute from "./PrivateRoute";
 import TaskManagement from "../pages/TaskManagement";
+import AboutUs from "../pages/AboutUs";
+import Contact from "../pages/Contact";
 
 const router = createBrowserRouter([
     {
@@ -18,6 +20,14 @@ const router = createBrowserRouter([
         {
           path: "/",
           element:<Home></Home>,   
+        },
+        {
+          path: "/about",
+          element:<AboutUs></AboutUs>,   
+        },
+        {
+          path: "/contact",
+          element:<Contact></Contact>,  
         },
         {
             path: "/add-task",

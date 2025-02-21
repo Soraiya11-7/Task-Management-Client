@@ -25,11 +25,13 @@ export default function Navbar() {
     return (
         <nav className="bg-purple-800 p-4 sticky top-0 z-50">
             <div className="container mx-auto flex justify-between items-center w-[90%]">
-                <Link to="/" className="text-white text-xl font-bold">Task Manager</Link>
+                <Link to="/" className="text-white text-xl font-bold">TaskHub</Link>
 
                 <div className="flex items-center space-x-3 ml-auto">
                     <div className="hidden md:flex items-center space-x-6">
                         <NavLink to='/' className={({ isActive }) => `flex items-center gap-x-1 ${isActive ? 'text-lime-400 font-bold' : 'text-white'}`}>Home</NavLink>
+                        <NavLink to='/about' className={({ isActive }) => `flex items-center gap-x-1 ${isActive ? 'text-lime-400 font-bold' : 'text-white'}`}>About Us</NavLink>
+                        <NavLink to='/contact' className={({ isActive }) => `flex items-center gap-x-1 ${isActive ? 'text-lime-400 font-bold' : 'text-white'}`}>Contact</NavLink>
 
                         {user && (
                             <>
@@ -61,6 +63,8 @@ export default function Navbar() {
             {isMenuOpen && (
                 <div className="md:hidden bg-purple-700 p-4 flex flex-col space-y-3 items-center">
                     <NavLink to='/' onClick={() => setIsMenuOpen(false)} className={({ isActive }) => `flex items-center gap-x-1 ${isActive ? 'text-lime-400 font-bold' : 'text-white'}`}>Home</NavLink>
+                    <NavLink to='/about' onClick={() => setIsMenuOpen(false)} className={({ isActive }) => `flex items-center gap-x-1 ${isActive ? 'text-lime-400 font-bold' : 'text-white'}`}>About Us</NavLink>
+                    <NavLink to='/contact' onClick={() => setIsMenuOpen(false)} className={({ isActive }) => `flex items-center gap-x-1 ${isActive ? 'text-lime-400 font-bold' : 'text-white'}`}>Contact</NavLink>
 
                     {user && (
                         <>
