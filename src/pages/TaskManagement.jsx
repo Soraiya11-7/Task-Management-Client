@@ -126,7 +126,11 @@ const TaskManagement = () => {
                 <div className="flex items-center justify-center">
                     <span className="loading loading-bars loading-lg flex items-center justify-center dark:text-white dark:bg-white text-purple-800"></span>
                 </div>
-            ) : (
+            ) : localTasks.length === 0 ? (
+                <div className="text-center">
+                  <h3 className="text-xl text-gray-500 dark:text-white my-10">No tasks Found!</h3>
+                </div>
+              ) :(
                 <>
                     <DragDropContext onDragEnd={onDragEnd}>
                         <div className="grid md:grid-cols-3 gap-6 relative overflow-hidden  my-10">
