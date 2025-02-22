@@ -60,11 +60,11 @@ export default function Navbar() {
                                     Contact
                                 </NavLink>
 
-                                <NavLink to='/add-task'
+                                <NavLink to='/addTask'
                                     className={({ isActive }) => `flex items-center gap-x-1 ${isActive ? 'text-lime-400 font-bold' : 'text-white'}`}>
                                     Add Task
                                 </NavLink>
-                                <NavLink to='/all-tasks'
+                                <NavLink to='/allTask'
                                     className={({ isActive }) => `flex items-center gap-x-1 ${isActive ? 'text-lime-400 font-bold' : 'text-white'}`}>
                                     All Tasks
                                 </NavLink>
@@ -113,11 +113,11 @@ export default function Navbar() {
                                 onClick={() => setIsMenuOpen(false)} className={({ isActive }) => `flex items-center gap-x-1 ${isActive ? 'text-lime-400 font-bold' : 'text-white'}`}>
                                 Contact
                             </NavLink>
-                            <NavLink to='/add-task'
+                            <NavLink to='/addTask'
                                 onClick={() => setIsMenuOpen(false)} className={({ isActive }) => `flex items-center gap-x-1 ${isActive ? 'text-lime-400 font-bold' : 'text-white'}`}>
                                 Add Task
                             </NavLink>
-                            <NavLink to='/all-tasks'
+                            <NavLink to='/allTask'
                                 onClick={() => setIsMenuOpen(false)} className={({ isActive }) => `flex items-center gap-x-1 ${isActive ? 'text-lime-400 font-bold' : 'text-white'}`}>
                                 All Tasks
                             </NavLink>

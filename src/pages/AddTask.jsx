@@ -32,7 +32,7 @@ const AddTask = () => {
                     showConfirmButton: false,
                     timer: 1500,
                 });
-                navigate('/all-tasks');
+                navigate('/allTask');
             };
         }
         catch (err) {
@@ -47,14 +47,15 @@ const AddTask = () => {
         }
     };
     return (
-        <div className="container w-[80%] mx-auto">
-            <div className="my-8 overflow-hidden">
-                <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-center my-8">
-                    Add a New Task
+        <div className="container bg-gray-50  mx-auto">
+            <div className="py-12 overflow-hidden w-[90%] mx-auto">
+                <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-center mb-12">
+                    Create a New Task
                 </h2>
+                <div className="">
                 <form
                     onSubmit={handleSubmit(onSubmit)}
-                    className="space-y-6 bg-gray-100 rounded-lg shadow-lg px-6 md:px-10 py-8 dark:text-black"
+                    className="space-y-6  bg-white mx-auto rounded-lg shadow-lg px-6 md:px-10 py-8 dark:text-black"
                 >
 
                     {/* Task Name */}
@@ -106,6 +107,8 @@ const AddTask = () => {
                     {/* Submit Button */}
                     <button className="btn bg-purple-900 hover:bg-purple-800 text-white w-full mb-5">Add Task</button>
                 </form>
+                </div>
+              
             </div>
         </div>
     );

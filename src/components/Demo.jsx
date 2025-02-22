@@ -170,7 +170,7 @@ const Demo = () => {
             ) : (
             <>
                 <DragDropContext onDragEnd={onDragEnd}>
-                    <div className="grid md:grid-cols-3 gap-6 relative overflow-hidden border border-red-500">
+                    <div className="grid md:grid-cols-3 gap-6 relative overflow-hidden ">
                         {categories.map((category) => (
                             <Droppable key={category} droppableId={category}>
                                 {(provided) => (

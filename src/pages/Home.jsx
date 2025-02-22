@@ -7,7 +7,7 @@ import NewsletterSection from "../components/NewsLetterSection";
 
 const Home = () => {
     return (
-        <div className="text-yellow-500 font-bold text-5xl text-center container w-full mx-auto">
+        <div className="text-yellow-500 font-bold text-5xl text-center container w-full mx-auto bg-gray-50">
             <Banner></Banner>
 
             <FeaturedSection></FeaturedSection>

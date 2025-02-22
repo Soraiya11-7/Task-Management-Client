@@ -14,10 +14,10 @@ const NewsletterSection = () => {
   };
 
   return (
-    <div className="bg-gradient-to-r from-purple-700 to-purple-900 py-16 mt-10">
+    <div className="bg-gradient-to-r from-purple-700 to-purple-900 py-16 mt-12">
       <div className="w-[90%] mx-auto text-center">
-        <h2 className="text-3xl font-bold mb-3 text-white">Subscribe to Our Newsletter</h2>
-        <p className="text-base mb-12 text-white">
+        <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-3 text-white">Subscribe to Our Newsletter</h2>
+        <p className="text-sm md:text-base mb-12 text-white w-[90%] md:w-[80%] mx-auto">
           Stay updated with the latest news and updates on task management. 
           Subscribe to our newsletter for insights, tips, and more!
         </p>
@@ -28,7 +28,7 @@ const NewsletterSection = () => {
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Enter your email"
             required
-            className="p-2 w-60 md:w-72 text-base text-white border border-gray-300 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-purple-800 shadow-lg"
+            className="p-2 w-full sm:w-60 md:w-72 text-base text-white border border-gray-300 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-purple-800 shadow-lg"
           />
           <button
             type="submit"

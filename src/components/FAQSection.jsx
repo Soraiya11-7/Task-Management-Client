@@ -41,7 +41,7 @@ const FAQSection = () => {
   ];
 
   return (
-    <div className="py-10 w-[90%] mx-auto flex flex-col gap-12 bg-white rounded-lg mt-5">
+    <div className="py-10 w-[90%] mx-auto flex flex-col gap-12 bg-white rounded-lg mb-14">
       <div className="flex flex-col text-left">
         <p className="text-xl sm:text-2xl text-center md:text-3xl font-bold mb-2 text-purple-800">
           <FaQuestionCircle className="inline-block mr-1 text-purple-800" /> Task Management FAQs

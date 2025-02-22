@@ -1,8 +1,5 @@
 // import { useState, useEffect } from "react";
 // import { useQuery } from "@tanstack/react-query";
-// import { DragDropContext, Droppable, Draggable } from "@hello-pangea/dnd";
-// import useAxiosPublic from "../hooks/useAxiosPublic";
-// import useAuth from "../hooks/useAuth";
 // import EditTaskModal from "../components/EditTaskModal";
 // import Swal from "sweetalert2";
 // import { toast } from "react-toastify";
@@ -147,7 +144,7 @@
 //     //             // Emit the update to the WebSocket
 //     //             socket.emit("taskUpdated", draggedTask);
 //     //             // Refresh data after the update is successful
-//     //             refetch(); 
+//     //             refetch();
 //     //         }
 //     //     } catch (err) {
 //     //         toast.error(err.message || "Error updating task", { position: "top-center", autoClose: 2000 });

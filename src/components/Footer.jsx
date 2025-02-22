@@ -8,7 +8,7 @@ const Footer = () => {
         {/* Site Name */}
         <div className="md:w-[35%]">
           <h2 className="text-2xl font-bold mb-3 ">TaskFlow</h2>
-          <p className="text-sm opacity-80 mt-2 w-[90%] sm:w-[80%] md:w-[70%] mx-auto md:mx-0">
+          <p className="text-xs md:text-sm opacity-80 mt-2 w-[90%] sm:w-[80%] md:w-[70%] mx-auto md:mx-0">
             Enhance productivity with a structured task flow, enabling efficient planning, real-time progress tracking, and streamlined collaboration from start to finish.
           </p>
 
@@ -18,16 +18,16 @@ const Footer = () => {
         <div className="mt-6 md:mt-0 md:w-[35%] mx-auto md:mx-0">
           <h3 className="text-xl md:text-2xl font-bold mb-3">Our Services</h3>
           <ul className="space-y-1">
-            <li className="flex items-center text-sm md:text-base space-x-3">
-              <FaTasks className="text-white text-sm md:text-base" />
+            <li className="flex items-center text-xs md:text-sm md:text-base space-x-3">
+              <FaTasks className="text-white text-xs md:text-sm md:text-base" />
               <span>Create, Modify, and Remove Tasks</span>
             </li>
-            <li className="flex items-center text-sm md:text-base space-x-3">
-              <FaSync className="text-white text-sm md:text-base" />
+            <li className="flex items-center text-xs md:text-sm md:text-base space-x-3">
+              <FaSync className="text-white text-xs md:text-sm md:text-base" />
               <span>Seamless Drag-and-Drop Task Management</span>
             </li>
-            <li className="flex items-center text-sm md:text-base space-x-3">
-              <FaChartLine className="text-white text-sm md:text-base" />
+            <li className="flex items-center text-xs md:text-sm md:text-base space-x-3">
+              <FaChartLine className="text-white text-xs md:text-sm md:text-base" />
               <span>Comprehensive Progress Monitoring</span>
             </li>
           </ul>

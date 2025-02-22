@@ -53,10 +53,10 @@ const Login = () => {
     }
 
     return (
-        <div className=" container h-screen flex flex-col items-center justify-center mx-auto w-[90%]">
+        <div className=" container my-10 md:my-2 min-h-screen flex flex-col items-center justify-center mx-auto w-[90%]">
             <h1 className="text-center  pb-4 text-xl font-bold md:text-4xl text-purple-800">Welcome to TaskFlow!</h1>
             <p className="text-center text-sm sm:text-base md:text-xl w-[80%] mx-auto">Enhance your productivity with seamless task management. Please sign in to get started.</p>
-            <div className="flex flex-col-reverse gap-10 mt-8  md:flex-row items-center justify-center   ">
+            <div className="flex flex-col-reverse gap-4 md:gap-10 mt-8  md:flex-row items-center justify-center   ">
 
                 <div className="bg-purple-800 p-8 rounded-lg shadow-lg text-center max-w-[330px] md:w-[400px]">
                     <h2 className="text-xl md:text-2xl font-bold mb-3 text-white">Welcome to TaskFlow</h2>

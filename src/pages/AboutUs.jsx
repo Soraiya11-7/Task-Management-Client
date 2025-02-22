@@ -2,10 +2,10 @@ import { FaUsers, FaTasks, FaClock, FaShieldAlt } from 'react-icons/fa';
 
 const AboutUs = () => {
   return (
-    <div className="bg-white py-16">
+    <div className="bg-gray-50 py-14">
       <div className="w-[90%] mx-auto text-center">
-        <h1 className="text-4xl font-bold text-purple-800 mb-8">About Us</h1>
-        <p className="mb-10 text-sm md:text-base w-[90%] sm:w-[80%] md:w-[60%] lg:w-[50%] mx-auto">
+        <h1 className="text-2xl md:text-3xl font-extrabold text-black mb-4">About TaskFlow</h1>
+        <p className="mb-12 text-sm md:text-base w-[90%] sm:w-[80%] md:w-[60%] lg:w-[50%] mx-auto">
           We are a dedicated team passionate about creating solutions that simplify task management and enhance productivity. 
           Our mission is to provide an intuitive platform to help individuals and teams stay organized and efficient.
         </p>
