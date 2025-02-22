@@ -1,17 +1,18 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
 const MainLayout = () => {
+    const location = useLocation();
     return (
         <div className=" container w-full mx-auto border border-red-800">
-        {/* <Navbar></Navbar> */}
-        <Navbar></Navbar>
-        <div className="min-h-[calc(100vh-213px)]">
+        {location.pathname !== '/' && <Navbar />}
+        <div className="min-h-[calc(100vh-321px)]">
             <Outlet />
         </div>
+        
         {/* Footer */}
-       <Footer></Footer>
+        {location.pathname !== '/' && <Footer />}
     </div>
     );
 };

@@ -18,16 +18,21 @@ const router = createBrowserRouter([
       element: <MainLayout></MainLayout>,
       children: [
         {
-          path: "/",
-          element:<Home></Home>,   
+          path: '/',
+          element: <Login></Login>
         },
         {
+          path: "/home",
+          element:<PrivateRoute><Home></Home></PrivateRoute>,   
+        },
+        
+        {
           path: "/about",
-          element:<AboutUs></AboutUs>,   
+          element:<PrivateRoute><AboutUs></AboutUs></PrivateRoute>,   
         },
         {
           path: "/contact",
-          element:<Contact></Contact>,  
+          element:<PrivateRoute><Contact></Contact></PrivateRoute>,  
         },
         {
             path: "/add-task",
@@ -38,10 +43,7 @@ const router = createBrowserRouter([
              element:<PrivateRoute><TaskManagement></TaskManagement> </PrivateRoute>,   
           },
 
-        {
-          path: 'login',
-          element: <Login></Login>
-        },
+      
         // {
         //   path: 'signup',
         //   element: <SignUp></SignUp>

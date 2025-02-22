@@ -1,5 +1,5 @@
 import Banner from "../components/Banner";
-import Demo from "../components/Demo";
+// import Demo from "../components/Demo";
 import FAQSection from "../components/FAQSection";
 import FeaturedSection from "../components/FeaturedSection";
 import NewsletterSection from "../components/NewsLetterSection";
@@ -14,9 +14,9 @@ const Home = () => {
 
             <FAQSection></FAQSection>
 
-            <Demo></Demo>
+            {/* <Demo></Demo>
 
-            This is home
+            This is home */}
             <NewsletterSection></NewsletterSection>
         </div>
     );
